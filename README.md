@@ -11,28 +11,36 @@ To implement Pseudorandom Number Generation using the standard library functions
 
 ## Program:
 ```
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-    // Seed the random number generator with the current time
-    srand(time(0));
-
-    // Generate and print 5 pseudorandom numbers in the range [0, 99]
-    printf("Pseudorandom numbers:\n");
-    for (int i = 0; i < 5; i++) {
-        int random_number = rand() % 100;  // Limit range to 0-99
-        printf("%d ", random_number);
+int main() 
+{
+    int count, min, max;
+    printf("Enter the number of random numbers to generate: ");
+    scanf("%d", &count);
+    printf("Enter the minimum value: ");
+    
+    scanf("%d", &min);
+    printf("Enter the maximum value: ");
+    scanf("%d", &max);
+    srand(time(NULL));
+    printf("Pseudorandom numbers:\n");   
+    for (int i = 0; i < count; i++) 
+    {
+        int random_number = (rand() % (max - min + 1)) + min;
+        printf("%d\n", random_number);
     }
-    printf("\n");
-
     return 0;
 }
+
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/731023b8-e78f-4aa0-89d0-f485613e0e15)
+![image](https://github.com/user-attachments/assets/df53d99b-1dec-4189-89c2-6bf64148e7e0)
+
 
 
 ## Result:
